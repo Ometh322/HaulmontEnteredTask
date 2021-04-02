@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-polyclinic" insertBefore="administration" caption="mainMsg://menu_config.application-polyclinic">
+        <item screen="polyclinic_Doctor.browse" caption="mainMsg://menu_config.polyclinic_Doctor.browse"/>
+        <item screen="polyclinic_Patient.browse" caption="mainMsg://menu_config.polyclinic_Patient.browse"/>
+        <item screen="polyclinic_Recipe.browse" caption="mainMsg://menu_config.polyclinic_Recipe.browse"/>
+    </menu>
+</menu-config>

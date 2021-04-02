@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="&#1057;&#1090;&#1072;&#1090;&#1080;&#1089;&#1090;&#1080;&#1082;&#1072; &#1074;&#1099;&#1087;&#1080;&#1089;&#1072;&#1085;&#1085;&#1099;&#1093; &#1088;&#1077;&#1094;&#1077;&#1087;&#1090;&#1086;&#1074;"
+        focusComponent="form"
+        messagesPack="com.company.polyclinic.web.screens.doctor">
+    <data>
+        <instance id="doctorDc"
+                  class="com.company.polyclinic.entity.Doctor">
+            <view>
+                <property name="lastName"/>
+                <property name="numOfRecipes"/>
+                <property name="specialization"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="AUTO"
+                width="AUTO"
+                modal="true"
+                forceDialog="true" closeable="true" closeOnClickOutside="true"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="doctorDc">
+            <column width="350px">
+                <textField id="lastNameField" property="lastName"
+                           caption="&#1060;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103;" editable="false"/>
+                <textField id="specializationField" property="specialization"
+                           caption="&#1057;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103;"
+                           editable="false"/>
+                <textField id="numOfRecipesField" property="numOfRecipes"
+                           caption="&#1063;&#1080;&#1089;&#1083;&#1086; &#1074;&#1099;&#1087;&#1080;&#1089;&#1072;&#1085;&#1085;&#1099;&#1093; &#1088;&#1077;&#1094;&#1077;&#1087;&#1090;&#1086;&#1074;"
+                           editable="false"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true" visible="false">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose" caption="&#1054;&#1082;"/>
+        </hbox>
+    </layout>
+</window>

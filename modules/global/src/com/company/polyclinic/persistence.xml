@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="TestTask" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.polyclinic.entity.Patient</class>
+        <class>com.company.polyclinic.entity.Doctor</class>
+        <class>com.company.polyclinic.entity.Recipe</class>
+    </persistence-unit>
+</persistence>

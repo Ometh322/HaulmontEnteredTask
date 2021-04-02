@@ -1,0 +1,96 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="&#1057;&#1087;&#1080;&#1089;&#1086;&#1082; &#1074;&#1088;&#1072;&#1095;&#1077;&#1081;"
+        focusComponent="table"
+        messagesPack="com.company.polyclinic.web.screens.doctor">
+    <data>
+        <collection id="doctorsDc"
+                    class="com.company.polyclinic.entity.Doctor">
+            <view extends="_local"/>
+            <loader id="doctorsDl">
+                <query>
+                    <![CDATA[select e from polyclinic_Doctor e]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="doctorDc"
+                  class="com.company.polyclinic.entity.Doctor">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <actions>
+        <action id="save" icon="icons/ok.png" caption="mainMsg://actions.Ok" shortcut="CTRL-ENTER"/>
+        <action id="cancel" icon="icons/cancel.png" caption="mainMsg://actions.Cancel" description="Esc"/>
+    </actions>
+    <dialogMode width="auto" height="auto" closeable="true" closeOnClickOutside="true"/>
+    <layout>
+        <split id="split" height="100%" orientation="horizontal" reversePosition="true" width="100%">
+            <vbox id="lookupBox" expand="table" height="100%" margin="false,true,false,false" spacing="true">
+                <groupTable id="table"
+                            width="100%"
+                            dataContainer="doctorsDc" align="TOP_LEFT">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                        <action id="statisticsView" type="view" trackSelection="true">
+                            <properties>
+                                <property name="openMode" value="DIALOG"/>
+                                <property name="screenClass"
+                                          value="com.company.polyclinic.web.screens.doctor.DoctorEdit"/>
+                            </properties>
+                        </action>
+                    </actions>
+                    <columns>
+                        <column id="lastName" caption="&#1060;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103;"/>
+                        <column id="firstName" caption="&#1048;&#1084;&#1103;"/>
+                        <column id="patronymic" caption="&#1054;&#1090;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;"/>
+                        <column id="specialization"
+                                caption="&#1057;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103;"
+                        />
+                        </columns>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="table.create"
+                                caption="&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100;"/>
+                        <button id="editBtn" action="table.edit"
+                                caption="&#1048;&#1079;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100;"/>
+                        <button id="removeBtn" action="table.remove"
+                                caption="&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100;"/>
+                        <button id="statisticsBtn"
+                                caption="&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1089;&#1090;&#1072;&#1090;&#1080;&#1089;&#1090;&#1080;&#1082;&#1091;"
+                                action="table.statisticsView"/>
+                    </buttonsPanel>
+                </groupTable>
+                <hbox id="lookupActions" spacing="true" visible="false">
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
+            </vbox>
+            <vbox id="editBox" height="100%" margin="false,false,false,true" expand="fieldGroupBox" spacing="true">
+                <scrollBox id="fieldGroupBox" align="TOP_RIGHT">
+                    <form id="form" dataContainer="doctorDc"
+                    >
+                        <column width="350px">
+                            <textField id="lastNameField" property="lastName"
+                                       caption="&#1060;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103;" datatype="string"/>
+                            <textField id="firstNameField" property="firstName" caption="&#1048;&#1084;&#1103;"
+                                       datatype="string"/>
+                            <textField id="patronymicField" property="patronymic"
+                                       caption="&#1054;&#1090;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;"
+                                       datatype="string"/>
+                            <textField id="specializationField" property="specialization"
+                                       caption="&#1057;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103;"
+                                       datatype="string"/>
+                        </column>
+                    </form>
+                </scrollBox>
+                <hbox id="actionsPane" spacing="true" visible="false">
+                    <button id="saveBtn" action="save" caption="&#1054;&#1082;"/>
+                    <button id="cancelBtn" action="cancel" caption="&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;"/>
+                </hbox>
+            </vbox>
+        </split>
+    </layout>
+</window>
