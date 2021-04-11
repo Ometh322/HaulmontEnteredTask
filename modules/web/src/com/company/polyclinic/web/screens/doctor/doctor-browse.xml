@@ -1,5 +1,5 @@
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="&#1057;&#1087;&#1080;&#1089;&#1086;&#1082; &#1074;&#1088;&#1072;&#1095;&#1077;&#1081;"
+        caption="msg://doctorBrowse.caption"
         focusComponent="table"
         messagesPack="com.company.polyclinic.web.screens.doctor">
     <data>
@@ -42,24 +42,24 @@
                         </action>
                     </actions>
                     <columns>
-                        <column id="lastName" caption="&#1060;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103;"/>
-                        <column id="firstName" caption="&#1048;&#1084;&#1103;"/>
-                        <column id="patronymic" caption="&#1054;&#1090;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;"/>
+                        <column id="lastName" caption="msg://lastName.caption" captionProperty="lastName"/>
+                        <column id="firstName" caption="msg://firstName.caption" captionProperty="firstName"/>
+                        <column id="patronymic" caption="msg://patronymic.caption" captionProperty="patronymic"/>
                         <column id="specialization"
-                                caption="&#1057;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103;"
-                        />
+                                caption="msg://specialization.caption"
+                                captionProperty="specialization"/>
                         </columns>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
                         <button id="createBtn" action="table.create"
-                                caption="&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100;"/>
+                                caption="msg://createBtn.caption"/>
                         <button id="editBtn" action="table.edit"
-                                caption="&#1048;&#1079;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100;"/>
+                                caption="msg://editBtn.caption"/>
                         <button id="removeBtn" action="table.remove"
-                                caption="&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100;"/>
+                                caption="msg://removeBtn.caption"/>
                         <button id="statisticsBtn"
-                                caption="&#1055;&#1086;&#1082;&#1072;&#1079;&#1072;&#1090;&#1100; &#1089;&#1090;&#1072;&#1090;&#1080;&#1089;&#1090;&#1080;&#1082;&#1091;"
+                                caption="msg://statisticsBtn.caption"
                                 action="table.statisticsView"/>
                     </buttonsPanel>
                 </groupTable>
@@ -74,21 +74,21 @@
                     >
                         <column width="350px">
                             <textField id="lastNameField" property="lastName"
-                                       caption="&#1060;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103;" datatype="string"/>
-                            <textField id="firstNameField" property="firstName" caption="&#1048;&#1084;&#1103;"
+                                       caption="msg://lastNameField.caption" datatype="string"/>
+                            <textField id="firstNameField" property="firstName" caption="msg://firstNameField.caption"
                                        datatype="string"/>
                             <textField id="patronymicField" property="patronymic"
-                                       caption="&#1054;&#1090;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;"
+                                       caption="msg://patronymicField.caption"
                                        datatype="string"/>
                             <textField id="specializationField" property="specialization"
-                                       caption="&#1057;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1080;&#1079;&#1072;&#1094;&#1080;&#1103;"
+                                       caption="msg://specializationField.caption"
                                        datatype="string"/>
                         </column>
                     </form>
                 </scrollBox>
                 <hbox id="actionsPane" spacing="true" visible="false">
-                    <button id="saveBtn" action="save" caption="&#1054;&#1082;"/>
-                    <button id="cancelBtn" action="cancel" caption="&#1054;&#1090;&#1084;&#1077;&#1085;&#1072;"/>
+                    <button id="saveBtn" action="save" caption="msg://saveBtn.caption"/>
+                    <button id="cancelBtn" action="cancel" caption="msg://cancelBtn.caption"/>
                 </hbox>
             </vbox>
         </split>
